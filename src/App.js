@@ -43,7 +43,7 @@ export default class App extends Component {
 
   }
 
-  handleCalculatecancel = () => {
+  handleCalculatereset = () => {
     axios.get(`https://ftl-frontend-test.herokuapp.com/interest?amount=${this.state.currency}&numMonths=${this.state.monthsSelected}`)
       .then(res => {
         this.setState({ result: false, loan: res.data })
@@ -126,7 +126,7 @@ export default class App extends Component {
                       Total Amount to pay <strong className="text-success">{loan.numPayments * loan.monthlyPayment.amount} $</strong>
                     </span>
                   </div>
-                 <button className="btn btn-warning btn-sm" style={{marginLeft:"500px"}} onClick={this.handleCalculatecancel}>Reset</button>   
+                 <button className="btn btn-warning btn-sm" style={{marginLeft:"500px"}} onClick={this.handleCalculatereset}>Reset</button>   
 
                 </div>
               </div>
