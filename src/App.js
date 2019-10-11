@@ -46,7 +46,14 @@ export default class App extends Component {
   handleCalculatereset = () => {
     axios.get(`https://ftl-frontend-test.herokuapp.com/interest?amount=${this.state.currency}&numMonths=${this.state.monthsSelected}`)
       .then(res => {
+         this.setState({
+      monthsSelected: false
+    })
+        this.setState({
+      currency: false
+    })
         this.setState({ result: false, loan: res.data })
+        
         console.log(res)
       })
 
